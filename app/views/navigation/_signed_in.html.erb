@@ -1,0 +1,23 @@
+<ul>
+  <% @subjects.each do |subject| %>
+    <li><%= link_to subject.name, subject %></li>
+  <% end %>
+</ul>
+<script type="text/javascript">
+$("#hide").toggle(function () {
+    $(this).attr('src', '/assets/show.png');
+    $("#navigation").hide(500);
+    $("#content").animate({
+      marginLeft: "2px"
+    });
+   },
+   function () {
+    $(this).attr('src', '/assets/hide.png');
+    $("#navigation").show(500);
+    $("#content").animate({
+      marginLeft: "145px"
+    });
+   }
+);
+
+</script>

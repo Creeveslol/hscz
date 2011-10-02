@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hscz</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= image_tag("hide.png", :id => "hide" ) %>   <%= link_to "Logout", destroy_student_session_path, :method => "delete" %>
+  <div id="navigation">
+    <% if student_signed_in? %>
+      <%= render "navigation/signed_in" %>
+    <% else %>
+      <%= render "navigation/not_signed_in" %>
+    <% end %>
+  </div>
+  <div id="content">
+    <%= yield %>
+  </div>
+</body>
+</html>
